@@ -12,6 +12,7 @@
 #include <vector>
 #include <numeric>
 #include <algorithm>
+#include <cstdint>
 #include <unordered_map>
 #include <memory>
 #include <variant>
@@ -19,22 +20,27 @@
 #include <tuple>
 #include <format>
 
+// Creating enum that will allow us to differentiate based off order type
+enum class OrderType
+{
+    GoodTillCancel,
+    FillAndKill
+};
+
+enum class Side
+{
+    Buy,
+    Sell
+};
+
+// Aliasing simple types to make code more readable and clear
+using Price = std::int32_t; // Is signed because a price can be negative
+using Quantity = std::uint32_t; // Is unsigned because a quantity can't be negative
+using OrderId = std::uint64_t; // Is unsigned because we don't want a negative id
+
 
 
 int main(){
-
-    // Creating enum that will allow us to differentiate based off order type
-    enum class OrderType
-    {
-        GoodTillCancel,
-        FillAndKill
-    };
-
-    enum class Side
-    {
-        Buy,
-        Sell
-    };
 
 
 
