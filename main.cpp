@@ -21,9 +21,13 @@
 
 
 
-int main()
-{
+int main(){
 
+    // Creating enum that will allow us to differentiate based off order type
+    enum class OrderType{
+        GoodTillCancel,
+        FillAndKill
+    };
 
 
     return 0;
