@@ -24,10 +24,20 @@
 int main(){
 
     // Creating enum that will allow us to differentiate based off order type
-    enum class OrderType{
+    enum class OrderType
+    {
         GoodTillCancel,
         FillAndKill
     };
+
+    enum class Side
+    {
+        Buy,
+        Sell
+    };
+
+
+
 
 
     return 0;
