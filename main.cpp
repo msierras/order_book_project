@@ -38,6 +38,15 @@ using Price = std::int32_t; // Is signed because a price can be negative
 using Quantity = std::uint32_t; // Is unsigned because a quantity can't be negative
 using OrderId = std::uint64_t; // Is unsigned because we don't want a negative id
 
+// An order book is made up of levels and these levels are made up of price and quantity
+struct LevelInfo
+{
+    Price price_;
+    Quantity quantity_;
+};
+
+using LevelInfos = std::vector<LevelInfo>;
+
 
 
 int main(){
