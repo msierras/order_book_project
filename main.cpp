@@ -47,6 +47,22 @@ struct LevelInfo
 
 using LevelInfos = std::vector<LevelInfo>;
 
+class OrderbookLevelInfos
+{
+public:
+    OrderbookLevelInfos( const LevelInfos& bids, const LevelInfos& asks )
+        // Uniform initialization
+        : bids_{ bids }, asks_{ asks } {}
+
+    // Trailing const (after the method name) means the method won't modify any member variables.
+    // It can be called on a const instance of the class
+    const LevelInfos& GetBids() const { return bids_; }
+    const LevelInfos& GetAsks() const { return asks_; }
+
+private:
+    LevelInfos bids_;
+    LevelInfos asks_;
+};
 
 
 int main(){
